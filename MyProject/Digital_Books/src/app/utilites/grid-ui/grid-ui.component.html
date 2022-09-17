@@ -1,0 +1,16 @@
+<table  style="border: 1px solid; width: 100%;">
+    <tr>
+        <th *ngFor="let col of gridColumns" style="border: 1px solid;">
+            {{col.colName}}
+            </th>
+    </tr>
+    <tr *ngFor="let colObj of gridData" style="border: 1px solid;">
+       <td *ngFor="let col of gridColumns" style="border: 1px solid;">
+        {{colObj[col.colName]}}
+        </td>
+        <td style="border: 1px solid;">
+            <a (click)="selectedGrid(colObj)" class="btn btn-primary" style="border: 1px solid;">Edit</a>
+            <a (click)="deleteGrid(colObj)" class="btn btn-primary" style="border: 1px solid;">Delete</a>
+            </td>
+    </tr>
+</table>
